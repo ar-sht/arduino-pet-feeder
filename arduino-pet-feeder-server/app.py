@@ -7,6 +7,7 @@ app = Flask(__name__)
 
 s = serial.Serial(port="COM5", baudrate=9600, timeout = 2, bytesize=8, stopbits=serial.STOPBITS_ONE)
 
+
 @app.route('/')
 def hello():
     return render_template('index.html')
@@ -27,9 +28,8 @@ def schedule():
         return render_template('schedule.html', time1=time1, time2=time2, time3=time3) # must be in templates folder
 
 
-
 if __name__ == "__main__":
-    app.run("0.0.0.0", port="8040")
+    app.run("0.0.0.0", port=8040)
 
 
 s.close()
