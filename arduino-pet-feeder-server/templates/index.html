@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title> IoT Door </title>
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+
+<header>
+  <h1>IoT Pet Feeder</h1>
+  <h3>This is the web interface for controlling our pet feeder. It's not very robust, but it's a great proof of concept,
+    and it does work.</h3>
+</header>
+
+<button name="auto-feeding" id="auto-feeding">Feed automatically</button>
+
+<form action="{{ url_for("schedule") }}" method="post" id="time-form">
+  <div class="form-section" id="times">
+    <label for="time1">Enter first feeding time:</label>
+    <input type="time" name="time1" id="time1">
+
+    <label for="time2">Enter second feeding time:</label>
+    <input type="time" name="time2" id="time2">
+
+    <label for="time3">Enter third feeding time:</label>
+    <input type="time" name="time3" id="time3">
+  </div>
+
+  <div class="form-section">
+    <button type="submit">poop</button>
+  </div>
+</form>
+</body>
+
+<script>
+    const autoFeedOption = document.getElementById('auto-feeding')
+    const form = document.getElementById('time-form')
+
+    autoFeedOption.addEventListener('click', () => {
+        // send message to use distance sensors to feed
+    })
+</script>
+
+</html>
