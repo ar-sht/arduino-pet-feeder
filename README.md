@@ -1,6 +1,6 @@
-# arduino-pet-feeder
+# Arduino Pet Feeder
 
-This is a repo to keep track of the code for the IoT pet feeder created with Isabel Xiong, Samanyu Rao, and Arjun Desch at EMU's techathon.
+This is a repo to keep track of the code for the IoT pet feeder created with Isabel Xiong, Samanyu Rao, and Arjun Desch at EMU & Spark's Techathon.
 
 ---
 
