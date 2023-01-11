@@ -4,4 +4,4 @@ This is a repo to keep track of the code for the IoT pet feeder created with Isa
 
 ---
 
-It has a website using flask to control the pet feeder and arduino code for the device itself
+It has a website using flask to control the pet feeder and arduino code for the device itself. It is still under development.
