@@ -1,0 +1,142 @@
+header {
+    padding: 3vh 10vw;
+    background-color: #bfd3da;
+    border: 2px solid #3d4a56;
+    margin-bottom: 3vh;
+}
+
+header > * {
+    text-align: center;
+}
+
+h1 {
+    font: bolder 48pt serif;
+    margin-bottom: 2vh;
+    border-bottom: 1px dashed #3d4a56;
+}
+
+h2 {
+    font: bolder 32pt serif;
+    margin-bottom: 2vh;
+    border-bottom: 1px dashed #3d4a56;
+}
+
+h3 {
+    font: normal 18pt serif;
+}
+
+div#test-div {
+    margin: 3vh auto auto auto;
+    padding: 20px 0;
+    width: 400px;
+    background-color: #384d54;
+    border: 2px solid #01060e;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    color: #f3fcf3;
+}
+
+
+
+p, label, span {
+    font: 400 16pt serif;
+}
+
+span.time {
+    color: #011623;
+    padding: 1px 3px;
+    background-color: #eeeaae;
+    border: 1px solid #192023;
+    border-radius: 2px;
+}
+
+form {
+    border: 2px solid #011623;
+    border-radius: 20px;
+    background-color: #384d54;
+    margin: auto;
+    width: 400px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #f3fcf3;
+}
+
+div.choice {
+    margin-top: 40px;
+    display: flex;
+    width: 200px;
+    flex-direction: column;
+    justify-content: space-around;
+    height: auto;
+    align-items: center;
+}
+
+label[for=choice] {
+    margin-bottom: 20px;
+}
+
+div#times {
+    margin-top: 50px;
+    height: 250px;
+}
+
+div#times > * {
+    margin: 25px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: auto;
+}
+
+label.time-label {
+    margin-right: 30px;
+}
+
+input[type=time] {
+    background: #2e333b;
+    color: #fff;
+    padding: 2px 4px;
+    font-size: 14pt;
+    border: none;
+    border-radius: 5px;
+}
+
+input[type=time]::-webkit-datetime-edit-hour-field:focus,
+input[type=time]::-webkit-datetime-edit-minute-field:focus,
+input[type=time]::-webkit-datetime-edit-ampm-field:focus {
+    color: #fff;
+    background-color: #4b5955;
+    outline: none;
+}
+
+div#submit {
+    margin-top: 50px;
+    height: 200px;
+}
+
+button {
+    font: 400 18pt serif;
+    height: 60px;
+    width: 250px;
+    border: 2px solid #f3fcf3;
+    color: #f3fcf3;
+    background: none;
+    border-radius: 10px;
+}
+
+button:hover {
+    cursor: pointer;
+    border-color: #dcdcdc;
+    color: #dcdcdc;
+    transition: all 0.2s;
+}
+
+button:active {
+    transform: scale(95%);
+}

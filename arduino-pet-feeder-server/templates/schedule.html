@@ -1,12 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Successfully Scheduled!</title>
+  <meta charset="UTF-8">
+  {% if choice %}
+  <title>Automatic Feeding Set Up</title>
+  {% else %}
+  <title>Feeding Successfully Scheduled!</title>
+  {% endif %}
+  <link rel="stylesheet" href="/statics/styles/style.css">
 </head>
 <body>
-    <h1>Your feeding times have been scheduled!</h1>
-
-    <p>Your pet will be fed at {{ time1 }}, {{ time2 }}, and {{ time3 }}</p>
+{% if choice == "True" %}
+<header>
+  <h2>Your pet will be fed automatically</h2>
+  <h3>The bowl will be filled whenever your pet approaches (with a five-minute timeout). If you'd like to schedule automatic feeding, resubmit the form with your chosen feeding times.</h3>
+</header>
+{% else %}
+<header>
+    <h2>Your feeding times have been scheduled</h2>
+  <h3>Your pet will be fed at <span class="time">{{ time1 }}</span>, <span class="time">{{ time2 }}</span>, and <span class="time">{{ time3 }}</span>. You can resubmit the form after your pet has been fed at all of those three times.</h3>
+</header>
+{% endif %}
 </body>
 </html>
