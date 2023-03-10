@@ -12,25 +12,20 @@ def convert(integer):
 
 app = Flask(__name__, template_folder="templates", static_folder="statics")
 
-s = serial.Serial("/dev/tty.usbmodem1101", baudrate=9600)
+s = serial.Serial("/dev/tty.usbmodem13301", baudrate=9600)
 
 
 @app.route('/')
 def index():
-    global s
-    if not s.isOpen():
-        s.open()
-
-    time = datetime.now()
-    hour = convert(time.hour)
-    minute = convert(time.minute)
+    now_time = datetime.now()
+    hour = convert(now_time.hour)
+    minute = convert(now_time.minute)
 
     to_write = f"S{hour}{minute}"
 
     print(to_write)
-    s.write(to_write.encode('utf-8'))
-    print("message sent");
-    s.close()
+    s.write(to_write.encode('ascii'))
+    print("message sent")
 
     return render_template('index.html')
 
@@ -39,8 +34,6 @@ def index():
 def schedule():
     if request.method == "POST":
         global s
-        if not s.isOpen():
-            s.open()
 
         choice = str(request.form.get("choice") == "on")
 
@@ -50,8 +43,7 @@ def schedule():
 
         to_write = f"{choice[0]}{time1}{time2}{time3}"
         print(to_write)
-        s.write(to_write.encode('utf-8'))
-        s.close()
+        s.write(to_write.encode('ascii'))
     
         return render_template('schedule.html', choice=choice, time1=time1, time2=time2, time3=time3)
 
@@ -59,11 +51,11 @@ def schedule():
 @app.route('/test')
 def test():
     global s
-    if not s.isOpen():
-        s.open()
 
-    s.write(b'OH-FEED-IT!')
-    s.close()
+    message = "OPEN"
+    print(f"sending message: {message}")
+    s.write(message.encode('ascii'))
+    print("sent")
 
     return render_template('index.html')
 
